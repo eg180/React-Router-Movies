@@ -16,6 +16,8 @@ export default function App () {
         .then(response => {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
+          console.log(response)
+          setMovieList(response.data)
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -34,10 +36,10 @@ export default function App () {
 
       <div>
       <Link to='/'>Movie List</Link>
-      
+       
       
     <Route exact path='/'>
-      <div>Our movies lists</div>
+      <MovieList movies={movieList} />
     </Route>
 
     
